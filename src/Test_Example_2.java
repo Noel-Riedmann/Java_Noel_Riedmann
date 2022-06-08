@@ -6,11 +6,11 @@ public class Test_Example_2 {
         boolean isFinished = false;
         int num;
         int value = 0;
-        while (!isFinished){
+        while (!isFinished) {
             num = random.nextInt(11);
             System.out.println(num);
-             value = value + num;
-            if (num==5){
+            value = value + num;
+            if (num == 5) {
                 isFinished = true;
             }
         }

@@ -15,17 +15,13 @@ public class caesar {
             alphabet = text.charAt(i);
             if (alphabet >= 'a' && alphabet <= 'z') {
 
-                alphabet = (char) (alphabet + shift );
+                alphabet = (char) (alphabet + shift);
 
                 if (alphabet > 'z') {
 
                     alphabet = (char) (alphabet + 'a' - 'z');
                 }
-                string;
-            }
-
-
-            else if (alphabet >= 'A' && alphabet <= 'Z') {
+            } else if (alphabet >= 'A' && alphabet <= 'Z') {
                 alphabet = (char) (alphabet + shift);
 
 
