@@ -13,9 +13,9 @@ public class CrossSum4 {
             if (selection == 1) {
 
                 boolean whileTrue2 = true;
-                while (whileTrue2){
                 System.out.println("Type number: ");
                 int selectionCrossSum = scan.nextInt();
+                while (whileTrue2){
                 String numberInString = Integer.toString(selectionCrossSum);
                 char[] numbers = numberInString.toCharArray();
 
@@ -35,13 +35,14 @@ public class CrossSum4 {
                 }
                 if (sum < 10) {
                     System.out.println("Press 1 to play again or 2 to stop!");
+                    whileTrue2 = false;
                 }
-            }}}
+            }}
 
             //End boolean to end the program
             if (selection == 2) {
                 whileTrue = false;
-            }
+            }}
         }
     }
-}
+
