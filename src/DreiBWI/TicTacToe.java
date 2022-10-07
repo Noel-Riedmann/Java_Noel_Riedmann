@@ -9,6 +9,8 @@ public class TicTacToe {
         boolean isFinished = false;
         String playerChoice;
 
+        //FELD NICHT DOPPELT SPIELEN KÖNNEN
+
         // Welcome Text
         System.out.println(" ");
         System.out.println("*******************************");
@@ -17,8 +19,24 @@ public class TicTacToe {
         System.out.println("*******************************");
         System.out.println(" ");
 
+        // Choose player name
+        System.out.println("Choose your name player 1:");
+        String playerOneName = scanner.next();
+        System.out.println("Choose your name player 2:");
+        String playerTwoName = scanner.next();
+
         //Create Field
         char[][] field = new char[3][3];
+
+        //Create empty spaces on field
+
+        for (int i = 0; i < 3; i++) {
+            field[0][i] = ' ';
+            field[1][i] = ' ';
+            field[2][i] = ' ';
+
+        }
+
 
         //Define a variable to define which players turn it is
         int roundValue = 0;
@@ -26,24 +44,23 @@ public class TicTacToe {
         //While loop
         while (!isFinished) {
             //Check which players turn it is
-            if (roundValue % 2 == 0){
+            if (roundValue % 2 == 0) {
                 playerChoice = "x";
-                System.out.println("It's your turn Player1!");
-            }
-            else {
+                System.out.println("It's your turn " + playerOneName + "!");
+            } else {
                 playerChoice = "o";
-                System.out.println("It's your turn Player2!");
+                System.out.println("It's your turn " + playerTwoName + "!");
             }
 
             //Get player Input
 
-            System.out.println("Choose field: (0,0 - 2,2)");
+            System.out.println("Choose field: x,y (1,1 - 3,3)");
             String input = scanner.next();
 
-            //Split player Input
+            //Split player Input (use -1 to show a field starting at 1,1)
             String[] in = input.split(",");
-            int x = Integer.parseInt(in[0]);
-            int y = Integer.parseInt(in[1]);
+            int x = Integer.parseInt(in[0]) -1;
+            int y = Integer.parseInt(in[1]) -1;
 
             //Define field
             if (playerChoice.equalsIgnoreCase("x")) {
@@ -62,22 +79,58 @@ public class TicTacToe {
             //Check whether game ended (one play won) or not
             //Check for equality or rows
             for (int i = 0; i < 3; i++) {
-                if (field[i][0] == field[i][1] && field[i][1] == field[i][2] && field[i][i] != 0){
+                if (field[i][0] == field[i][1] && field[i][1] == field[i][2] && field[i][i] != ' ') {
                     isFinished = true;
+                    if (field[i][i] == 'x') {
+                        System.out.println(playerOneName + " won!");
+                    } else {
+                        System.out.println(playerTwoName + " won!");
+                    }
                 }
             }
             //Check for equality or columns
             for (int j = 0; j < 3; j++) {
-                if (field[0][j] == field[1][j] && field[1][j] == field[2][j] && field[j][j] != 0){
+                if (field[0][j] == field[1][j] && field[1][j] == field[2][j] && field[j][j] != ' ') {
                     isFinished = true;
+                    if (field[j][j] == 'x') {
+                        System.out.println(playerOneName + " won!");
+                    } else {
+                        System.out.println(playerTwoName + " won!");
+
+                    }
                 }
+
+                //Diagonals
+                if (field[0][0] == field[1][1] && field[0][0] == field[2][2] && field[1][1] != ' ') {
+                    isFinished = true;
+                    if (field[1][1] == 'x') {
+                        System.out.println(playerOneName + " won!");
+                    } else {
+                        System.out.println(playerTwoName + " won!");
+                    }
+                }
+
+                if (field[0][2] == field[1][1] && field[2][2] == field[2][0] && field[1][1] != ' ') {
+                    isFinished = true;
+                    if (field[1][1] == 'x') {
+                        System.out.println(playerOneName + " won!");
+                    } else {
+                        System.out.println(playerTwoName + " won!");
+                    }
+                }
+
+                //For draw ask with for loop wheter or not all fields are != 0
+                for (int i = 0; i < 3; i++) {
+                    if (field[i][0] == ' ' || field[i][1] == ' ' || field[i][2] == ' '||field[0][i] == ' ' || field[1][i] == ' ' || field[2][i] == ' ') {
+                        isFinished = false;
+                    } else {
+                        isFinished = true;
+                        System.out.println("Game Draw!");
+                    }
+                }
+                //change round value
+                roundValue++;
             }
-
-            //Diagonals
-
-
-            //change round value
-            roundValue++;
         }
     }
 }
