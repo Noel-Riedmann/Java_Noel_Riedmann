@@ -9,8 +9,6 @@ public class TicTacToe {
         boolean isFinished = false;
         String playerChoice;
 
-        //FELD NICHT DOPPELT SPIELEN KÖNNEN
-
         // Welcome Text
         System.out.println(" ");
         System.out.println("*******************************");
@@ -43,6 +41,7 @@ public class TicTacToe {
 
         //While loop
         while (!isFinished) {
+
             //Check which players turn it is
             if (roundValue % 2 == 0) {
                 playerChoice = "x";
@@ -52,15 +51,21 @@ public class TicTacToe {
                 System.out.println("It's your turn " + playerTwoName + "!");
             }
 
-            //Get player Input
 
+            //Get player Input
             System.out.println("Choose field: x,y (1,1 - 3,3)");
             String input = scanner.next();
 
             //Split player Input (use -1 to show a field starting at 1,1)
             String[] in = input.split(",");
-            int x = Integer.parseInt(in[0]) -1;
-            int y = Integer.parseInt(in[1]) -1;
+            int x = Integer.parseInt(in[0]) - 1;
+            int y = Integer.parseInt(in[1]) - 1;
+
+            //Check if field is already taken
+            if (field[x][y] == 'x' || field[x][y] == 'o') {
+                System.out.println("Field is already in use!");
+            }
+
 
             //Define field
             if (playerChoice.equalsIgnoreCase("x")) {
@@ -99,38 +104,40 @@ public class TicTacToe {
 
                     }
                 }
-
-                //Diagonals
-                if (field[0][0] == field[1][1] && field[0][0] == field[2][2] && field[1][1] != ' ') {
-                    isFinished = true;
-                    if (field[1][1] == 'x') {
-                        System.out.println(playerOneName + " won!");
-                    } else {
-                        System.out.println(playerTwoName + " won!");
-                    }
-                }
-
-                if (field[0][2] == field[1][1] && field[2][2] == field[2][0] && field[1][1] != ' ') {
-                    isFinished = true;
-                    if (field[1][1] == 'x') {
-                        System.out.println(playerOneName + " won!");
-                    } else {
-                        System.out.println(playerTwoName + " won!");
-                    }
-                }
-
-                //For draw ask with for loop wheter or not all fields are != 0
-                for (int i = 0; i < 3; i++) {
-                    if (field[i][0] == ' ' || field[i][1] == ' ' || field[i][2] == ' '||field[0][i] == ' ' || field[1][i] == ' ' || field[2][i] == ' ') {
-                        isFinished = false;
-                    } else {
-                        isFinished = true;
-                        System.out.println("Game Draw!");
-                    }
-                }
-                //change round value
-                roundValue++;
             }
+
+
+            //Diagonals
+            if (field[0][0] == field[1][1] && field[0][0] == field[2][2] && field[1][1] != ' ') {
+                isFinished = true;
+                if (field[1][1] == 'x') {
+                    System.out.println(playerOneName + " won!");
+                } else {
+                    System.out.println(playerTwoName + " won!");
+                }
+            }
+
+            if (field[0][2] == field[1][1] && field[0][2] == field[2][0] && field[1][1] != ' ') {
+
+                isFinished = true;
+                if (field[1][1] == 'x') {
+                    System.out.println(playerOneName + " won!");
+                } else {
+                    System.out.println(playerTwoName + " won!");
+                }
+            }
+
+            //For draw ask with for loop wheter or not all fields are != 0
+            for (int i = 0; i < 3; i++) {
+                if (field[i][0] == ' ' || field[i][1] == ' ' || field[i][2] == ' ' || field[0][i] == ' ' || field[1][i] == ' ' || field[2][i] == ' ') {
+
+                } else {
+                    isFinished = true;
+                    System.out.println("Game Draw!");
+                }
+            }
+            //change round value
+            roundValue++;
         }
     }
 }
