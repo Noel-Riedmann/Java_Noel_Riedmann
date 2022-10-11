@@ -45,9 +45,11 @@ public class TicTacToe {
             //Check which players turn it is
             if (roundValue % 2 == 0) {
                 playerChoice = "x";
+                System.out.println(" ");
                 System.out.println("It's your turn " + playerOneName + "!");
             } else {
                 playerChoice = "o";
+                System.out.println(" ");
                 System.out.println("It's your turn " + playerTwoName + "!");
             }
 
@@ -117,7 +119,7 @@ public class TicTacToe {
                 }
             }
 
-            if (field[0][2] == field[1][1] && field[0][2] == field[2][0] && field[1][1] != ' ') {
+            else if (field[0][2] == field[1][1] && field[0][2] == field[2][0] && field[1][1] != ' ') {
 
                 isFinished = true;
                 if (field[1][1] == 'x') {
@@ -127,14 +129,11 @@ public class TicTacToe {
                 }
             }
 
-            //For draw ask with for loop wheter or not all fields are != 0
-            for (int i = 0; i < 3; i++) {
-                if (field[i][0] == ' ' || field[i][1] == ' ' || field[i][2] == ' ' || field[0][i] == ' ' || field[1][i] == ' ' || field[2][i] == ' ') {
-
-                } else {
+            //For draw ask with for loop whether or not all fields are != 0
+                else if (field[0][0] != ' ' && field[0][1] != ' ' && field[0][2] != ' ' && field[1][0] != ' ' && field[1][1] != ' ' && field[1][2] != ' ' && field[2][0] != ' ' && field[2][1] != ' ' && field[2][2] != ' ') {
                     isFinished = true;
                     System.out.println("Game Draw!");
-                }
+
             }
             //change round value
             roundValue++;
