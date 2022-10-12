@@ -83,7 +83,7 @@ public class TicTacToe {
                 System.out.println(field[i]);
             }
 
-            //Check whether game ended (one play won) or not
+            //Check whether game ended (one player won) or not
             //Check for equality or rows
             for (int i = 0; i < 3; i++) {
                 if (field[i][0] == field[i][1] && field[i][1] == field[i][2] && field[i][i] != ' ') {
@@ -129,7 +129,7 @@ public class TicTacToe {
                 }
             }
 
-            //For draw ask with for loop whether or not all fields are != 0
+            //For draw check if all fields are != ' '
                 else if (field[0][0] != ' ' && field[0][1] != ' ' && field[0][2] != ' ' && field[1][0] != ' ' && field[1][1] != ' ' && field[1][2] != ' ' && field[2][0] != ' ' && field[2][1] != ' ' && field[2][2] != ' ') {
                     isFinished = true;
                     System.out.println("Game Draw!");
