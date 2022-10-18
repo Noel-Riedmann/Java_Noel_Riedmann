@@ -1,3 +1,5 @@
+package at.noel.basics;
+
 public class CrossSum3 {
     public static void main(String[] args) {
         for (int y = 0; y < 1001; y++) {

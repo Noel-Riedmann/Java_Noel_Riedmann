@@ -1,3 +1,5 @@
+package at.noel.basics;
+
 import java.util.Random;
 
 public class Test_Example_1 {

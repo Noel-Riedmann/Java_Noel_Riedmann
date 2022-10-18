@@ -1,5 +1,6 @@
+package at.noel.basics;
+
 import java.util.Scanner;
-import java.util.concurrent.LinkedTransferQueue;
 
 public class CrossSum4 {
     public static void main(String[] args) {

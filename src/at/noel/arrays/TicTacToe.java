@@ -1,4 +1,4 @@
-package DreiBWI;
+package at.noel.arrays;
 
 import java.util.Scanner;
 

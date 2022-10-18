@@ -1,3 +1,5 @@
+package at.noel.basics;
+
 import java.util.Scanner;
 
 public class Bankomat {

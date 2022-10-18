@@ -1,3 +1,5 @@
+package at.noel.basics;
+
 public class array_uebung_1 {
     public static void main(String[] args) {
 

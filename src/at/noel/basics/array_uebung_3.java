@@ -1,4 +1,5 @@
-import java.lang.reflect.Array;
+package at.noel.basics;
+
 import java.util.Arrays;
 
 public class array_uebung_3 {

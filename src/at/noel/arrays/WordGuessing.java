@@ -1,4 +1,4 @@
-package DreiBWI;
+package at.noel.arrays;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -59,7 +59,6 @@ public class WordGuessing {
                     word[i] = tmpCharArray[0];
                 } else {
                     System.out.println(word[i]);
-                    wrongTries++;
 
                 }
             }
@@ -71,9 +70,6 @@ public class WordGuessing {
             if (sum == WordPool.length()) {
                 System.out.println("You finished");
                 isFinished = true;
-            }
-            else if (wrongTries == 12){
-                System.out.println("You used all your tries!");
             }
             else {
                 sum = 0;
