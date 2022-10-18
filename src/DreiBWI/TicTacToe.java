@@ -117,9 +117,7 @@ public class TicTacToe {
                 } else {
                     System.out.println(playerTwoName + " won!");
                 }
-            }
-
-            else if (field[0][2] == field[1][1] && field[0][2] == field[2][0] && field[1][1] != ' ') {
+            } else if (field[0][2] == field[1][1] && field[0][2] == field[2][0] && field[1][1] != ' ') {
 
                 isFinished = true;
                 if (field[1][1] == 'x') {
@@ -130,9 +128,9 @@ public class TicTacToe {
             }
 
             //For draw check if all fields are != ' '
-                else if (field[0][0] != ' ' && field[0][1] != ' ' && field[0][2] != ' ' && field[1][0] != ' ' && field[1][1] != ' ' && field[1][2] != ' ' && field[2][0] != ' ' && field[2][1] != ' ' && field[2][2] != ' ') {
-                    isFinished = true;
-                    System.out.println("Game Draw!");
+            else if (field[0][0] != ' ' && field[0][1] != ' ' && field[0][2] != ' ' && field[1][0] != ' ' && field[1][1] != ' ' && field[1][2] != ' ' && field[2][0] != ' ' && field[2][1] != ' ' && field[2][2] != ' ') {
+                isFinished = true;
+                System.out.println("Game Draw!");
 
             }
             //change round value
