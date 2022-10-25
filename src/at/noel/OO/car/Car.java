@@ -2,11 +2,20 @@ package at.noel.OO.car;
 
 public class Car {
     //Instanz / Gedächtins
-    public int startFuelAmount;
-    public int fuelAmount;
-    public int fuelConsumption;
-    public String brand;
-    public String serialNumber;
+    private int startFuelAmount;
+    private int fuelAmount;
+    private int fuelConsumption;
+    private String brand;
+    private String serialNumber;
+    // private cannot be accesed by user
+    private  int amountFuelIntoMotor;
+
+    // constructer
+    public Car(int fc, String b, String s){
+        this.fuelConsumption = fc;
+        this.brand = b;
+        this.serialNumber = s;
+    };
 
     //Methode
     public void drive() {
@@ -34,6 +43,33 @@ public class Car {
 
     public void getRemainingRange() {
         System.out.println(fuelAmount);
+    }
+
+    // Getter und Setter
+
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public void setFuelAmount(int fuelAmount) {
+        this.fuelAmount = fuelAmount;
+    }
+
+    public void setSerialNumber(String serialNumber) {
+        this.serialNumber = serialNumber;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public int getFuelAmount() {
+        return fuelAmount;
+    }
+
+    public String getSerialNumber() {
+        return serialNumber;
     }
 }
 
