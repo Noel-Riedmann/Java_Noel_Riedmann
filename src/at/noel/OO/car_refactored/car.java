@@ -2,35 +2,32 @@ package at.noel.OO.car_refactored;
 
 public class car {
     // Creating car
-    private int fuelAmount;
+    private engine engine;
+    private tank tank;
     private String brand;
     private String serialNumber;
     private String color;
     private int fuelConsumption;
 
     //Method
-    public void driving(){
-        if (fuelAmount >= fuelConsumption){
-            fuelAmount = fuelAmount - fuelConsumption;
-            System.out.println("we can still drive");
-        }
-        else{
-            System.out.println("we don't have any fuel left :c");
-        }
+    public void info(){
+        System.out.println("Brand: " + this.brand);
+        System.out.println("Color: " + this.color);
+        System.out.println("Horsepower: " + this.getEngine().getHorsepower());
+        System.out.println("Max Fuel: " + this.getTank().getMaxFuel());
+        System.out.println("Fuel Amount: " + this.getTank().getFuelAmount());
+
     }
 
     //Constructor
-    public car(int fA, String b, String c){
-        this.fuelAmount = fA;
+    public car(engine engine, tank tank, String b, String c){
         this.brand = b;
         this.color = c;
+        this.engine = engine;
+        this.tank = tank;
     }
 
     //Allowing user to change values
-
-    public void setFuelAmount(int fuelAmount) {
-        this.fuelAmount = fuelAmount;
-    }
 
     public void setBrand(String brand) {
         this.brand = brand;
@@ -48,10 +45,6 @@ public class car {
         this.fuelConsumption = fuelConsumption;
     }
 
-    public int getFuelAmount() {
-        return fuelAmount;
-    }
-
     public String getBrand() {
         return brand;
     }
@@ -66,5 +59,13 @@ public class car {
 
     public int getFuelConsumption() {
         return fuelConsumption;
+    }
+
+    public at.noel.OO.car_refactored.engine getEngine() {
+        return engine;
+    }
+
+    public at.noel.OO.car_refactored.tank getTank() {
+        return tank;
     }
 }
