@@ -14,7 +14,7 @@ public class engine {
     //method drive
 
     public void drive(int amount){
-        System.out.println("the motor is running with " + amount);
+        System.out.println("The motor is running at " + speed + "kph");
     }
 
     public int getHorsepower() {
