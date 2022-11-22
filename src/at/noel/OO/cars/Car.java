@@ -6,9 +6,10 @@ public class Car {
     private int basePrice;
 
     //constructor
-    public Car(String color,int maxSpeed, int basePrice) {
+    public Car(String color, int maxSpeed, int basePrice) {
         this.basePrice = basePrice;
         this.maxSpeed = maxSpeed;
         this.color = color;
     }
+
 }
