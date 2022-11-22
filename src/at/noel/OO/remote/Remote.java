@@ -1,26 +1,47 @@
 package at.noel.OO.remote;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Remote {
-    private Battery battery;
+    private List<Battery> batteries;
 
-    public void getStatus(){
-        System.out.println(battery.getChargingStatus()*2/2);
+    //constructor
+    public Remote() {
+        this.batteries = new ArrayList<>();
     }
 
-    public void turnOn(){
-        battery.getChargingStatus() = battery.getChargingStatus() - 5;
-        System.out.println("Verbraucher angeschlossen");
+    // turnOn for user to use works together with this.batteries.turnOn
+    public void turnOn() {
+        for (int i = 0; i < batteries.size(); i++) {
+            System.out.println("Consumer " + i + " connected");
+            this.batteries.get(i).turnOnBattery();
+        }
     }
 
+    //turnOff for letting user know that there is no more battery connected
     public void turnOff(){
-        System.out.println("Kein Verbraucher angeschlossen");
+        for (int i = 0; i < batteries.size(); i++) {
+            System.out.println("Consumer " + i + " disconnected");
+        }
     }
 
-    public Battery getBattery() {
-        return battery;
+    //function to get average charging status
+    public void getAvgChargingStatus(){
+        int avgChargingStatus = 0;
+        for (int i = 0; i < batteries.size(); i++) {
+            avgChargingStatus += this.batteries.get(i).getChargingStatus();
+        }
+        System.out.println("The average load of all batteries combined is: "  + avgChargingStatus / batteries.size());
     }
 
-    public void setBattery(Battery battery) {
-        this.battery = battery;
+    //function to add multiple batteries
+    public void addBattery(Battery battery){
+        this.batteries.add(battery);
+    }
+
+    //getter
+    public List<Battery> getBatteries() {
+        return batteries;
     }
 }
