@@ -5,26 +5,36 @@ import java.util.Random;
 public class Engine {
     Random random = new Random();
     private int HorsePower;
-    public enum TYPE{diesel, gasoline}
+
+    public enum TYPE {diesel, gasoline}
+
     private TYPE typeOfFuel; //diesel or gasoline
     private int mileage;
     private double fuelConsumption;
 
-    public Engine(int HorsePower, TYPE typeOfFuel, int mileage){
+    public Engine(int HorsePower, TYPE typeOfFuel, int mileage) {
         this.HorsePower = HorsePower;
         this.typeOfFuel = typeOfFuel;
         this.mileage = mileage;
         this.fuelConsumption = random.nextDouble(5) + 5;
     }
 
-    public void checkFuelConsumption(){
-        if (this.mileage <= 50000){
+    public void checkFuelConsumption() {
+        if (this.mileage <= 50000) {
             System.out.println("The current fuel consumption is at " + fuelConsumption);
-        }
-        else {
+        } else {
             this.fuelConsumption *= 1.098;
-            System.out.println(fuelConsumption);
+            System.out.println("Current fuel consumption: " + Math.round(fuelConsumption) + " l/100km");
         }
+    }
+
+    //make info available for user
+    public void engineInfo(){
+        System.out.println("----------------Engine----------------");
+        System.out.println("horepower: " + this.HorsePower);
+        System.out.println("fueltype: " + this.typeOfFuel);
+        System.out.println("mileage: " + this.mileage);
+        System.out.println("--------------------------------------");
     }
 
     public int getHorsePower() {
