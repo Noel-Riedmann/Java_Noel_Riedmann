@@ -8,9 +8,8 @@ public class Main {
 
         //get information
         producer.producerInfo();
-        e1.engineInfo();
         c1.carInfo();
-
+        e1.engineInfo();
 
         e1.checkFuelConsumption();
         c1.getPrice();
