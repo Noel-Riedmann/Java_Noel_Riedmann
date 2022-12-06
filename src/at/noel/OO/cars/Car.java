@@ -5,12 +5,15 @@ public class Car {
     private String color;
     private int maxSpeed;
     private int basePrice;
+    private Producer producer;
+
 
     //constructor
-    public Car(String color, int maxSpeed, int basePrice) {
+    public Car(String color, int maxSpeed, int basePrice, Producer producer) {
         this.basePrice = basePrice;
         this.maxSpeed = maxSpeed;
         this.color = color;
+        this.producer = producer;
     }
     //make info available for user
     public void carInfo(){
@@ -23,7 +26,7 @@ public class Car {
 
 
     public void getPrice(){
-        this.basePrice = basePrice - Producer.getDiscount();
+        this.basePrice = basePrice - producer.getDiscount();
         System.out.println("The price of the car: " + basePrice + "€");
     }
 }

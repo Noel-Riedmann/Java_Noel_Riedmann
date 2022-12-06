@@ -6,7 +6,7 @@ public class Producer {
     Random random = new Random();
     private String name;
     private String country;
-    private static int discount;
+    private int discount;
 
     //constructor
     public Producer(String name, String country){
@@ -24,7 +24,7 @@ public class Producer {
         System.out.println("--------------------------------------");
     }
 
-    public static int getDiscount() {
+    public  int getDiscount() {
         return discount;
     }
 
