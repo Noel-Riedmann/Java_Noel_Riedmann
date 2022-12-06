@@ -1,9 +1,11 @@
 package at.noel.OO.cars;
 
+
 public class Car {
     private String color;
     private int maxSpeed;
     private int basePrice;
+    private Producer producer;
 
     //constructor
     public Car(String color, int maxSpeed, int basePrice) {
@@ -12,4 +14,8 @@ public class Car {
         this.color = color;
     }
 
+    public void getPrice(){
+        this.basePrice = basePrice - producer.getDiscount;
+        System.out.println(basePrice);
+    }
 }

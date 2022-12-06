@@ -12,4 +12,6 @@ public class Producer {
         this.country = country;
         this.discount = random.nextInt(30) + 10;
     }
+
+    public int getDiscount = this.discount;
 }

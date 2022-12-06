@@ -8,17 +8,23 @@ public class Engine {
     public enum TYPE{diesel, gasoline}
     private TYPE typeOfFuel; //diesel or gasoline
     private int mileage;
-    private int fuelConsumption;
+    private double fuelConsumption;
 
     public Engine(int HorsePower, TYPE typeOfFuel, int mileage){
         this.HorsePower = HorsePower;
         this.typeOfFuel = typeOfFuel;
         this.mileage = mileage;
-        this.fuelConsumption = random.nextInt(5) + 5;
+        this.fuelConsumption = random.nextDouble(5) + 5;
     }
 
     public void checkFuelConsumption(){
-        if (this.mileage)
+        if (this.mileage <= 50000){
+            System.out.println("The current fuel consumption is at " + fuelConsumption);
+        }
+        else {
+            this.fuelConsumption *= 1.098;
+            System.out.println(fuelConsumption);
+        }
     }
 
     public int getHorsePower() {
@@ -45,7 +51,7 @@ public class Engine {
         this.mileage = mileage;
     }
 
-    public int getFuelConsumption() {
+    public double getFuelConsumption() {
         return fuelConsumption;
     }
 
