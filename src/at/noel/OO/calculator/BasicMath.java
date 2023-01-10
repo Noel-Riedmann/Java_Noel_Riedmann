@@ -15,6 +15,7 @@ public class BasicMath {
         System.out.println("-Press 3 to do square roots");
         System.out.println("-Press 9 to exit");
         int userInput = scanner.nextInt();
+
     }
     public void basicCalculationTypes(){
         System.out.println("|----------------Calculator----------------|");
