@@ -1,0 +1,19 @@
+package at.noel.OO.geometricFigures;
+
+public class Rectangle {
+    private double width;
+    private double height;
+    private double area;
+
+    public Rectangle(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    public double getArea(){
+        area = width * height;
+        System.out.println("-------Rectangle-------");
+        System.out.println("Area is: " + Math.round(area*100.0)/100.0);
+        return area;
+    }
+}
