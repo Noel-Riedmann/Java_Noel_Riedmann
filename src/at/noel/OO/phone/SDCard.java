@@ -32,4 +32,12 @@ public class SDCard {
     public double getCapacity() {
         return capacity;
     }
+
+    public List<PhoneFile> getPhoneFiles() {
+        return phoneFiles;
+    }
+
+    public void setPhoneFiles(List<PhoneFile> phoneFiles) {
+        this.phoneFiles = phoneFiles;
+    }
 }

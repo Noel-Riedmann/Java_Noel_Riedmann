@@ -13,7 +13,11 @@ public class Main {
         camera.makePicture();
         camera.makePicture();
 
+        myPhone.makeCall("0660 309534095");
+        sim.getInfo();
+        phoneFile.getInfo();
         sdCard.getAllFiles();
+
     }
 
 
